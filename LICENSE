@@ -1,0 +1,56 @@
+# Pebbix licensing scope
+
+Copyright (c) 2026 kr.donminzzi, except material with its own notices.
+Pebbix is a mixed-license, source-available game.
+The unmodified texts in LICENSES/ govern their respective material.
+There is no repository-wide MIT grant for this revision.
+
+## Default game software: PolyForm Noncommercial 1.0.0
+
+Project-authored app code, game rules, presentation, session integration, game-specific tests, tools, and configuration use PolyForm Noncommercial 1.0.0.
+This includes lib/game/domain/, components/, view/, widgets/, session/, and game-specific capture, preview, and store tools, subject to the exact exceptions below.
+Use LICENSES/PolyForm-Noncommercial-1.0.0.txt, including its express permitted purposes and organization provisions.
+Commercial reuse outside those permitted purposes, including paid or advertising-funded repackaging, requires separate permission from the relevant rights holders.
+This summary does not change the license text.
+
+## Exact MIT exceptions
+
+Only these project-owned reusable source files are designated MIT:
+
+- lib/game/cubit/audio/bounded_audio_pool.dart
+- lib/loading/widgets/animated_progress_bar.dart
+- tool/generate_special_shot_audio.py
+- tool/postprocess_flutterfire.py
+- tool/test_postprocess_flutterfire.py
+
+The synthesized assets/audio/bomb.mp3 and assets/audio/rainbow.mp3 also remain MIT.
+Retain LICENSES/MIT.txt and applicable copyright and source notices when reusing them.
+Taking a fragment from another game file does not make it MIT.
+There is no MIT OR noncommercial choice for the game body.
+MIT components may be reused commercially, including in an independently created game.
+
+## Original explanatory prose: CC BY 4.0
+
+Project-authored README, development, architecture, planning, validation, and retrospective prose is CC BY 4.0.
+Attribution and the other conditions in LICENSES/CC-BY-4.0.txt apply.
+Embedded implementation snippets retain their source license: game snippets remain PolyForm Noncommercial and snippets from exact MIT exceptions remain MIT.
+Images, video, quoted correspondence, and externally owned material are not relicensed as prose.
+An unmarked game-code example is not automatically MIT.
+
+## Original artwork and motion: CC BY-NC 4.0
+
+Project-created game images, animation sources, and their derivatives are CC BY-NC 4.0, only to the extent the project holds licensable rights.
+Use LICENSES/CC-BY-NC-4.0.txt.
+This does not guarantee copyright protection or exclusivity for AI-generated material.
+See BRAND_USAGE.md for official-affiliation representations.
+
+## Third-party material and earlier grants
+
+Five externally sourced audio files retain CC0-1.0; both Pretendard fonts retain OFL-1.1 and the original notice.
+Template-derived portions and dependencies retain their original rights and notices; the game's noncommercial terms do not replace those terms for the materials themselves.
+See THIRD_PARTY_NOTICES.md and REUSE.toml for paths and provenance.
+Third-party quotations, including Apple review correspondence, receive no new license from this project.
+
+These terms describe this revision and do not revoke permissions previously granted with earlier copies.
+They do not prohibit independently written similar games or guarantee store acceptance.
+Keep the development repository private and prepare a separately reviewed, history-free snapshot for AndrewDongminYoo/pebbix.
