@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "import": [
+    "https://raw.githubusercontent.com/AndrewDongminYoo/quality-configs/v0.8.0/configs/cspell.config.yaml",
+    "https://raw.githubusercontent.com/AndrewDongminYoo/quality-configs/v0.8.0/configs/cspell/vgv.config.yaml"
+  ],
+  "dictionaries": [
+    "dart",
+    "flutter",
+    "swift",
+    "cpp",
+    "java",
+    "kotlin",
+    "softwareTerms",
+    "filetypes",
+    "fonts",
+    "custom-dictionary"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-dictionary",
+      "path": "./.cspell/custom-dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "allowCompoundWords": false,
+  "enableGlobDot": true,
+  "useGitignore": true,
+  "ignoreWords": ["plaintext"],
+  "ignorePaths": [".git", ".gitignore"],
+  "words": ["Hyung", "Pebbix", "Pretendard"]
+}

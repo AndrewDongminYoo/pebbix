@@ -1,0 +1,72 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Asia/Seoul
+    groups:
+      # Every version update, majors included, in one PR; CI runs the actions it bumps.
+      github-actions:
+        patterns: ["*"]
+      github-actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    open-pull-requests-limit: 1
+  - package-ecosystem: pub
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Asia/Seoul
+    ignore:
+      # Runtime majors without a security fix stay off (operator, 2026-10-24); firebase_crashlytics 6.0.0 and firebase_core 5.0.0 came as #127.
+      # update-types limits this to version updates; security updates still open.
+      - dependency-name: firebase_*
+        update-types:
+          - version-update:semver-major
+    groups:
+      pub:
+        patterns: ["*"]
+        update-types:
+          - minor
+          - patch
+      pub-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+    # Version updates are off for this private repository (operator, 2026-10-25); security updates still open.
+    open-pull-requests-limit: 0
+  - package-ecosystem: gradle
+    directory: /android
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Asia/Seoul
+    # Version updates are off for this private repository (operator, 2026-10-25); security updates still open.
+    open-pull-requests-limit: 0
+    ignore:
+      # Runtime majors without a security fix stay off (operator, 2026-10-24); com.android.application 9.4.1 came as #132.
+      # update-types limits this to version updates; security updates still open.
+      - dependency-name: com.android.application
+        update-types:
+          - version-update:semver-major
+      # Gradle wrapper upgrades follow the Flutter/AGP (or React Native) toolchain, not Dependabot.
+      # update-types limits this to version updates; security updates still open.
+      - dependency-name: gradle-wrapper
+        update-types:
+          - version-update:semver-patch
+          - version-update:semver-minor
+          - version-update:semver-major
+    groups:
+      gradle-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      gradle-security:
+        applies-to: security-updates
+        patterns:
+          - "*"

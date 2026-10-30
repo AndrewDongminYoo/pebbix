@@ -1,0 +1,8 @@
+targets:
+  $default:
+    builders:
+      flutter_gen_runner:
+        options:
+          line_length: 80
+          fonts:
+            enabled: false

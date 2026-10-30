@@ -1,0 +1,63 @@
+# This file controls the behavior of Trunk: https://docs.trunk.io/cli
+# To learn more about the format of this file, see https://docs.trunk.io/reference/trunk-yaml
+version: 0.1
+cli:
+  version: 1.25.0
+# Trunk provides extensibility via plugins. (https://docs.trunk.io/plugins)
+plugins:
+  sources:
+    - id: quality-configs
+      ref: v0.6.0
+      uri: https://github.com/AndrewDongminYoo/quality-configs
+    - id: trunk
+      ref: v1.11.0
+      uri: https://github.com/trunk-io/plugins
+# Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
+runtimes:
+  enabled:
+    - go@1.21.0
+    - java@13.0.11
+    - node@22.16.0
+    - python@3.14.4
+# This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
+lint:
+  definitions:
+    - name: pinact
+      commands:
+        - name: upgrade
+          enabled: true
+  disabled:
+    - bandit
+    - dart
+    - grype
+    - taplo
+  enabled:
+    - actionlint@1.7.12
+    - black@26.10.1
+    - checkov@3.4.0
+    - git-diff-check
+    - isort@9.0.2
+    - ktlint@1.8.0
+    - markdownlint@0.50.0
+    - osv-scanner@2.4.0
+    - oxipng@10.1.1
+    - pinact@4.1.1!
+    - prettier@3.9.10
+    - ruff@0.17.3
+    - shellcheck@0.11.0
+    - shfmt@3.13.1
+    - svgo@4.1.0
+    - trufflehog@3.96.0
+    - yamllint@1.38.0
+  ignore:
+    # Flutter tool template: prettier corrupts the {{flutter_js}} /
+    # {{flutter_build_config}} substitution placeholders.
+    - linters: [prettier]
+      paths:
+        - web/flutter_bootstrap.js
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available

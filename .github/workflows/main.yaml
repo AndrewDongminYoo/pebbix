@@ -1,0 +1,63 @@
+name: bubble_shooter
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ios-release-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: python3 -m unittest tool.test_postprocess_flutterfire tool.test_configure_firebase tool.test_export_public_snapshot -v
+
+  semantic-pull-request:
+    if: github.event_name == 'pull_request'
+    # The repo's default GITHUB_TOKEN grants contents+packages read only, so
+    # the action's GET /pulls/{n} came back "Resource not accessible by
+    # integration". The reusable workflow declares no permissions of its own.
+    permissions:
+      pull-requests: read
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+
+  build:
+    if: github.event_name != 'pull_request'
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+    with:
+      run_bloc_lint: true
+      # Same as the analysis_options.yaml page_width.
+      format_line_length: 120
+      setup: |
+        sudo apt-get update
+        sudo apt-get install --yes imagemagick
+        if ! command -v magick >/dev/null; then
+          sudo tee /usr/local/bin/magick >/dev/null <<'SH'
+        #!/usr/bin/env bash
+        if [[ "$1" == "identify" ]]; then
+          shift
+          exec identify "$@"
+        fi
+        exec convert "$@"
+        SH
+          sudo chmod +x /usr/local/bin/magick
+        fi
+
+  spell-check:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+    with:
+      includes: |
+        **/*.md
+      modified_files_only: false
+      config: cspell.json

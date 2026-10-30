@@ -1,0 +1,122 @@
+# --- Development workflow ---------------------------------------------------
+dev:
+  (description): Runs the Flutter application with hot reload enabled, ignoring deprecation warnings.
+  (scripts): flutter run --debug --hot --flavor development --target lib/main_development.dart --ignore-deprecation
+
+web:
+  (description): Runs the game in Chrome.
+  (scripts): flutter run -d chrome --target lib/main_development.dart
+
+serve:
+  (description): Builds the release web bundle and serves it on http://localhost:8787.
+  (scripts):
+    - $build:web
+    - python3 -m http.server 8787 -d build/web
+
+# --- Quality gates ----------------------------------------------------------
+pretest:
+  (description): Clean Existing Coverage reports
+  (scripts): rm -rf coverage
+
+test:
+  (description): Runs all tests in the Flutter project without coverage reporting.
+  (scripts): flutter test --concurrency=4 --test-randomize-ordering-seed=random --dart-define=FLUTTER_TEST=true --no-color
+
+coverage:
+  (aliases): cov
+  (description): Runs all tests with coverage and randomized ordering (matches CI).
+  (scripts): flutter test --coverage --test-randomize-ordering-seed=random
+
+postcoverage:
+  (description): Generates an HTML coverage report from the coverage data.
+  (scripts): genhtml coverage/lcov.info -o coverage/html --quiet
+
+analyze:
+  (description): Static analysis with very_good_analysis (zero tolerance, matches CI).
+  (scripts): flutter analyze
+
+check:
+  (description): The full local gate before committing — format, analyze, test.
+  (scripts):
+    - $format
+    - $analyze
+    - $test
+
+# --- Code generation --------------------------------------------------------
+generate:
+  (default): $generate:l10n
+
+  l10n:
+    (aliases): gen-l10n
+    (description): Regenerates localizations from the ARB files (config in l10n.yaml).
+    (scripts): flutter gen-l10n
+
+  firebase:
+    (description): Generates optional native configuration for the explicit FIREBASE_PROJECT_ID and normalizes the iOS SPM phase.
+    (scripts): python3 tool/configure_firebase.py
+
+reinstall:
+  (description): Cleans and reinstalls the Flutter project by removing old builds, regenerate boiler-plate codes
+  (scripts):
+    - flutter clean
+    - flutter packages get
+
+format:
+  (description): Applies automated fixes, sorts imports, and formats the codebase to ensure consistent code quality.
+  (scripts):
+    - dart fix --apply
+    - dart run import_sorter:main
+    - dart format lib test tool integration_test
+
+hard:
+  (description): Forces an upgrade of Flutter itself, then bumps every package to its latest major and tightens the constraints.
+  (scripts):
+    - flutter upgrade --force
+    - flutter packages upgrade --major-versions --tighten
+
+# --- Store assets -----------------------------------------------------------
+store-assets:
+  capture:
+    (description): Captures the two-locale raw screenshot set for one validated device profile.
+    (scripts): dart run tool/store_assets.dart capture $1 $2
+
+  compose:
+    (description): Composes and verifies the complete staged store-asset matrix.
+    (scripts): dart run tool/store_assets.dart compose
+
+  verify:
+    (description): Verifies the final store-asset files and deterministic manifest.
+    (scripts): dart run tool/store_assets.dart verify
+
+# --- Build artifacts --------------------------------------------------------
+build:
+  (default): $build:web
+
+  web:
+    (description): Builds the release web bundle from the production entrypoint, with every static resource served from the bundle.
+    # --no-web-resources-cdn is not optional here. Its default (on) makes the
+    # engine fetch its Roboto fallback from fonts.gstatic.com and CanvasKit
+    # from www.gstatic.com, so a default build issues external requests to
+    # render text — which spec 0003 and issue #41 both forbid. Measured
+    # 2026-09-02: with the flag, the page makes zero external HTTPS requests.
+    #
+    # --target is not optional either: this project has no lib/main.dart, only
+    # the three flavor entrypoints, so the default target made this script
+    # fail before it ever reached a build.
+    (scripts): flutter build web --no-web-resources-cdn --target lib/main_production.dart
+
+  apk:
+    (description): Builds a release Android APK using the pubspec version.
+    (scripts): flutter build apk --release --flavor production --target lib/main_production.dart --tree-shake-icons
+
+  aab:
+    (description): Builds a release Android App Bundle using the pubspec version.
+    (scripts): flutter build appbundle --release --flavor production --target lib/main_production.dart --tree-shake-icons
+
+  ipa:
+    (description): Builds a release iOS archive and IPA using the pubspec version.
+    (scripts): flutter build ipa --release --flavor production --target lib/main_production.dart --tree-shake-icons --export-options-plist=ios/ExportOptions.plist
+
+  macos:
+    (description): Builds the release macOS app.
+    (scripts): flutter build macos --release --flavor production --target lib/main_production.dart

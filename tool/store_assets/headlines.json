@@ -1,0 +1,16 @@
+{
+  "en-US": [
+    { "key": "aim", "value": "Aim with Precision" },
+    { "key": "bank-shot", "value": "Bank It Off the Wall" },
+    { "key": "cluster-drop", "value": "Break the Link. Drop Them All." },
+    { "key": "pressure", "value": "Stay Ahead of the Ceiling" },
+    { "key": "high-score", "value": "Chase a New High Score" }
+  ],
+  "ko": [
+    { "key": "aim", "value": "정확한 각도로 한 번에" },
+    { "key": "bank-shot", "value": "벽을 튕겨 빈틈으로" },
+    { "key": "cluster-drop", "value": "연결을 끊어 한꺼번에" },
+    { "key": "pressure", "value": "내려오는 천장보다 빠르게" },
+    { "key": "high-score", "value": "새로운 최고 점수에 도전" }
+  ]
+}
