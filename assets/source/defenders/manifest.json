@@ -1,0 +1,191 @@
+{
+  "characterId": "pebbix-defenders",
+  "engine": "component-row",
+  "game_input": "sprite-sheet-alpha.png",
+  "degraded_static_fallback": false,
+  "curation_applied": true,
+  "frame_variant": "pixel",
+  "sprite_sheet_alpha": "sprite-sheet-alpha.png",
+  "sprite_sheet_alpha_report": "sprite-sheet-alpha.report.json",
+  "base_image": "base-source.png",
+  "cell": {
+    "shape": "square",
+    "width": 256,
+    "height": 256,
+    "safe_margin_x": 14,
+    "safe_margin_y": 20
+  },
+  "chroma_key": {
+    "name": "green",
+    "hex": "#00FF00",
+    "rgb": [0, 255, 0],
+    "selection": "manual"
+  },
+  "animation": {
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "columns": 4,
+    "rows": {
+      "loader": {
+        "row": 0,
+        "frames": 4,
+        "fps": 10,
+        "durations_ms": [100, 100, 100, 100],
+        "loop": false,
+        "frame_variant": "pixel"
+      },
+      "mechanic": {
+        "row": 1,
+        "frames": 4,
+        "fps": 8,
+        "durations_ms": [125, 125, 125, 125],
+        "loop": false,
+        "frame_variant": "pixel"
+      },
+      "mint_cheer": {
+        "row": 2,
+        "frames": 4,
+        "fps": 8,
+        "durations_ms": [125, 125, 125, 125],
+        "loop": false,
+        "frame_variant": "pixel"
+      },
+      "peach_cheer": {
+        "row": 3,
+        "frames": 4,
+        "fps": 8,
+        "durations_ms": [125, 125, 125, 125],
+        "loop": false,
+        "frame_variant": "pixel"
+      },
+      "base": {
+        "row": 4,
+        "frames": 1,
+        "fps": 1,
+        "durations_ms": [1000],
+        "loop": false,
+        "frame_variant": "pixel"
+      }
+    }
+  },
+  "frame_layout": {
+    "sheetWidth": 1024,
+    "sheetHeight": 1280,
+    "cellWidth": 256,
+    "cellHeight": 256,
+    "rows": {
+      "loader": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 256,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 512,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 768,
+          "y": 0,
+          "w": 256,
+          "h": 256
+        }
+      ],
+      "mechanic": [
+        {
+          "x": 0,
+          "y": 256,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 256,
+          "y": 256,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 512,
+          "y": 256,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 768,
+          "y": 256,
+          "w": 256,
+          "h": 256
+        }
+      ],
+      "mint_cheer": [
+        {
+          "x": 0,
+          "y": 512,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 256,
+          "y": 512,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 512,
+          "y": 512,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 768,
+          "y": 512,
+          "w": 256,
+          "h": 256
+        }
+      ],
+      "peach_cheer": [
+        {
+          "x": 0,
+          "y": 768,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 256,
+          "y": 768,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 512,
+          "y": 768,
+          "w": 256,
+          "h": 256
+        },
+        {
+          "x": 768,
+          "y": 768,
+          "w": 256,
+          "h": 256
+        }
+      ],
+      "base": [
+        {
+          "x": 0,
+          "y": 1024,
+          "w": 256,
+          "h": 256
+        }
+      ]
+    }
+  }
+}

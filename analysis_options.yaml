@@ -1,0 +1,30 @@
+include:
+  - package:very_good_analysis/analysis_options.yaml
+  - package:bloc_lint/recommended.yaml
+analyzer:
+  errors:
+    directives_ordering: ignore
+    document_ignores: ignore
+    lines_longer_than_80_chars: ignore
+  exclude:
+    - lib/gen/*
+    - lib/l10n/gen/*
+    # Generated build output. iOS SwiftPM checkouts under build/ios vendor
+    # plugin sources whose own lints are not ours to fix.
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - macos/**
+    - windows/**
+    - linux/**
+linter:
+  rules:
+    public_member_api_docs: false
+    # Flame's Component.add returns FutureOr<void>; fire-and-forget adds are
+    # the engine's idiomatic usage and this rule flags every one of them.
+    discarded_futures: false
+
+formatter:
+  trailing_commas: preserve
+  page_width: 120

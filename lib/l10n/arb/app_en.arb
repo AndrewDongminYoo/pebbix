@@ -1,0 +1,314 @@
+{
+  "@@locale": "en",
+  "titleAppBarTitle": "Pebbix",
+  "@titleAppBarTitle": {
+    "description": "Text shown in the AppBar of the Title Page"
+  },
+  "titleButtonStart": "Start",
+  "@titleButtonStart": {
+    "description": "Text shown in the start Button of the Title Page"
+  },
+  "loading": "Loading {label}...",
+  "@loading": {
+    "description": "Text for the loading page",
+    "placeholders": {
+      "label": {
+        "type": "String",
+        "example": "Stuff",
+        "description": "Label for what is being loaded"
+      }
+    }
+  },
+  "loadingPhaseLabel": "{loadingPhase, select, audio{Delightful music} images{Beautiful scenery} other{ }}",
+  "@loadingPhaseLabel": {
+    "description": "Loading phases",
+    "placeholders": {
+      "loadingPhase": {}
+    }
+  },
+  "scoreLabel": "Score: {score}",
+  "@scoreLabel": {
+    "description": "Score readout on the HUD and game-over panel",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "120",
+        "description": "The current score"
+      }
+    }
+  },
+  "bestScoreLabel": "Best: {score}",
+  "@bestScoreLabel": {
+    "description": "Best score readout on the game-over panel",
+    "placeholders": {
+      "score": {
+        "type": "int",
+        "example": "120",
+        "description": "The best score"
+      }
+    }
+  },
+  "runShotsLabel": "Shots: {shots} · {perShot} per shot",
+  "@runShotsLabel": {
+    "description": "Game-over panel line reporting how many shots the run took and the score each one earned",
+    "placeholders": {
+      "shots": {
+        "type": "int",
+        "example": "16",
+        "description": "How many shots the run fired"
+      },
+      "perShot": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        },
+        "example": "7.5",
+        "description": "Score divided by shots, the run's efficiency"
+      }
+    }
+  },
+  "runContinuedLabel": "Continued once",
+  "@runContinuedLabel": {
+    "description": "Game-over panel line shown only when the run used its one rewarded Continue"
+  },
+  "tutorialHint": "Drag to aim, release to shoot",
+  "@tutorialHint": {
+    "description": "First-run hint explaining how to aim and shoot"
+  },
+  "ceilingCountdown": "Ceiling in {shots}",
+  "@ceilingCountdown": {
+    "description": "Shots remaining before the ceiling descends",
+    "placeholders": {
+      "shots": {
+        "type": "int",
+        "example": "2",
+        "description": "Remaining landed shots"
+      }
+    }
+  },
+  "ceilingDepth": "Depth: {rows}",
+  "@ceilingDepth": {
+    "description": "Rows the ceiling has descended during the current run",
+    "placeholders": {
+      "rows": {
+        "type": "int",
+        "example": "2",
+        "description": "Descended ceiling rows"
+      }
+    }
+  },
+  "aimAssistFull": "Aim: Exact",
+  "@aimAssistFull": {
+    "description": "HUD label while the full trajectory and landing are visible"
+  },
+  "aimAssistPath": "Aim: Path",
+  "@aimAssistPath": {
+    "description": "HUD label while the trajectory is visible without its landing marker"
+  },
+  "aimAssistDirection": "Aim: Direction",
+  "@aimAssistDirection": {
+    "description": "HUD label while only the direct launch segment is visible"
+  },
+  "aimAssistOff": "Aim: Off",
+  "@aimAssistOff": {
+    "description": "HUD label while aim assistance is hidden"
+  },
+  "aimAssistReduced": "Aim help reduced",
+  "@aimAssistReduced": {
+    "description": "Brief in-play notice when a ceiling descent lowers aim assistance; the new HUD label is shown under it"
+  },
+  "scoreCalloutBank": "Bank ×{multiplier}",
+  "@scoreCalloutBank": {
+    "description": "In-play callout over a scoring shot that bounced off a wall; multiplier is wall bounces + 1",
+    "placeholders": {
+      "multiplier": {
+        "type": "int"
+      }
+    }
+  },
+  "scoreCalloutBankRule": "Wall bounces multiply points",
+  "@scoreCalloutBankRule": {
+    "description": "Extra line on the first scoring bank shot of a run, explaining the multiplier"
+  },
+  "victoryTitle": "Board cleared!",
+  "@victoryTitle": {
+    "description": "Game-over panel title when the player wins"
+  },
+  "defeatTitle": "Game Over",
+  "@defeatTitle": {
+    "description": "Game-over panel title when the player loses"
+  },
+  "playAgain": "Play Again",
+  "@playAgain": {
+    "description": "Restart button on the game-over panel"
+  },
+  "continueWithAd": "Continue (watch ad)",
+  "@continueWithAd": {
+    "description": "Game-over button that plays a rewarded ad to revive the run"
+  },
+  "continueRewardCeiling": "Ceiling back one row",
+  "@continueRewardCeiling": {
+    "description": "First of three facts shown above the Continue button, saying what the rewarded ad buys: the ceiling retreats one row (spec §3)"
+  },
+  "continueRewardScore": "Score kept",
+  "@continueRewardScore": {
+    "description": "Second fact above the Continue button: the run keeps its score"
+  },
+  "continueRewardOnce": "Once per run",
+  "@continueRewardOnce": {
+    "description": "Third fact above the Continue button: only one Continue per run"
+  },
+  "skipContinue": "Skip",
+  "@skipContinue": {
+    "description": "Game-over button that declines the rewarded continue"
+  },
+  "pauseTitle": "Paused",
+  "@pauseTitle": {
+    "description": "Title shown on the pause panel"
+  },
+  "pauseResume": "Resume",
+  "@pauseResume": {
+    "description": "Button that resumes the paused run"
+  },
+  "pauseSettings": "Settings",
+  "@pauseSettings": {
+    "description": "Button that opens settings from the pause panel"
+  },
+  "pauseRestart": "Restart",
+  "@pauseRestart": {
+    "description": "Button that restarts the run from the pause panel"
+  },
+  "pauseButtonLabel": "Pause",
+  "@pauseButtonLabel": {
+    "description": "Tooltip for the pause button on the game HUD"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Title shown on the settings screen"
+  },
+  "settingsMusic": "Music",
+  "@settingsMusic": {
+    "description": "Label for the background music setting"
+  },
+  "settingsSfx": "Sound effects",
+  "@settingsSfx": {
+    "description": "Label for the sound effects setting"
+  },
+  "settingsHaptics": "Haptics",
+  "@settingsHaptics": {
+    "description": "Label for the haptics setting"
+  },
+  "settingsRemoveAds": "Remove Ads",
+  "@settingsRemoveAds": {
+    "description": "Entry that buys the remove_ads non-consumable"
+  },
+  "settingsRemoveAdsBody": "Removes the interstitials shown between runs. The optional Continue ad stays available.",
+  "@settingsRemoveAdsBody": {
+    "description": "Explains what the remove_ads purchase does and does not remove"
+  },
+  "settingsRemoveAdsOwned": "Purchased",
+  "@settingsRemoveAdsOwned": {
+    "description": "Shown on the remove ads entry once the entitlement is held"
+  },
+  "settingsRemoveAdsAwaiting": "Waiting for the store",
+  "@settingsRemoveAdsAwaiting": {
+    "description": "Shown on the remove ads entry while an attempt is outstanding with the store"
+  },
+  "purchaseTimedOut": "The store has not answered yet. Your purchases are unchanged.",
+  "@purchaseTimedOut": {
+    "description": "Message when a restore outlives its wait without the store answering"
+  },
+  "purchaseCompleted": "Ads removed. Thank you!",
+  "@purchaseCompleted": {
+    "description": "Message after a purchase settles successfully"
+  },
+  "purchaseRestored": "Your purchase has been restored.",
+  "@purchaseRestored": {
+    "description": "Message after a past purchase is restored"
+  },
+  "purchasePending": "Your purchase is waiting for approval.",
+  "@purchasePending": {
+    "description": "Message while the store holds a purchase pending or deferred"
+  },
+  "purchaseCanceled": "Purchase canceled.",
+  "@purchaseCanceled": {
+    "description": "Message after the player backs out of the store sheet"
+  },
+  "purchaseFailed": "The purchase could not be completed. Please try again later.",
+  "@purchaseFailed": {
+    "description": "Message after a purchase or restore fails, including an unreachable store"
+  },
+  "purchaseNothingToRestore": "There is no purchase to restore.",
+  "@purchaseNothingToRestore": {
+    "description": "Message after a restore the store answered with no purchase"
+  },
+  "settingsRestorePurchases": "Restore Purchases",
+  "@settingsRestorePurchases": {
+    "description": "Entry that restores previous store purchases"
+  },
+  "settingsPrivacyOptions": "Privacy options",
+  "@settingsPrivacyOptions": {
+    "description": "Entry that opens privacy and consent options"
+  },
+  "settingsPrivacyPolicy": "Privacy Policy",
+  "@settingsPrivacyPolicy": {
+    "description": "Opens the published privacy policy in a browser"
+  },
+  "settingsAnalytics": "Share gameplay analytics",
+  "@settingsAnalytics": {
+    "description": "Optional Firebase Analytics collection switch in Settings"
+  },
+  "settingsAnalyticsBody": "When enabled, gameplay and device data are sent to Google Firebase. You can turn this off at any time.",
+  "@settingsAnalyticsBody": {
+    "description": "Explains the separate Analytics opt-in and withdrawal"
+  },
+  "homeButton": "Home",
+  "@homeButton": {
+    "description": "Results-screen action that returns to the title screen"
+  },
+  "howToPlayTitle": "How to play",
+  "@howToPlayTitle": {
+    "description": "Title of the rules page, and the button that opens it from the title screen and the pause panel"
+  },
+  "howToPlayAim": "Drag to aim and release to shoot. Shots bounce off the side walls.",
+  "@howToPlayAim": {
+    "description": "Rules page: aiming and wall bounces"
+  },
+  "howToPlayMatch": "Three or more of one color pop, for 10 points each.",
+  "@howToPlayMatch": {
+    "description": "Rules page: the match rule and its score"
+  },
+  "howToPlayDrop": "Bubbles cut off from the top fall, for 20 points each.",
+  "@howToPlayDrop": {
+    "description": "Rules page: floating clusters drop and score double"
+  },
+  "howToPlayBounce": "Each wall bounce multiplies the shot's points: one bounce ×2, two ×3.",
+  "@howToPlayBounce": {
+    "description": "Rules page: the bank-shot multiplier, (bounces + 1)"
+  },
+  "howToPlayCeiling": "The ceiling drops a row every few shots, sooner as the run goes on. The run ends when bubbles reach the line at the bottom.",
+  "@howToPlayCeiling": {
+    "description": "Rules page: ceiling pressure and the fail line"
+  },
+  "howToPlayAimGuide": "The aim guide shortens as the ceiling drops, until you aim on your own.",
+  "@howToPlayAimGuide": {
+    "description": "Rules page: aim assistance decays with ceiling depth"
+  },
+  "howToPlayBubbles": "Bubbles",
+  "@howToPlayBubbles": {
+    "description": "Rules page: heading of the bubble legend"
+  },
+  "howToPlayColors": "Six colors. A run starts with four, and the other two join as the ceiling drops.",
+  "@howToPlayColors": {
+    "description": "Rules page: how many colors, and when the last two appear"
+  },
+  "howToPlayBomb": "Bomb: clears the bubbles around where it lands.",
+  "@howToPlayBomb": {
+    "description": "Rules page: the bomb special bubble"
+  },
+  "howToPlayRainbow": "Rainbow: turns the color of the first bubble it touches.",
+  "@howToPlayRainbow": {
+    "description": "Rules page: the rainbow special bubble"
+  }
+}

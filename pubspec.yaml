@@ -1,0 +1,101 @@
+name: bubble_shooter
+description: Pebbix — a bubble-shooter puzzle game built with Flutter and Flame.
+version: 1.1.1+7
+publish_to: none
+
+environment:
+  sdk: ^3.13.7
+  flutter: ^3.47.8
+
+dependencies:
+  audioplayers: ^6.8.1
+  bloc: ^9.2.1
+  equatable: ^3.0.0
+  firebase_core: ^5.1.0
+  firebase_crashlytics: ^6.0.1
+  flame: ^1.38.2
+  flame_audio: ^2.12.2
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  google_mobile_ads: ^9.2.0
+  # The stores' own billing flows: spec §4's non-consumable remove_ads has to
+  # reach StoreKit and Play Billing, and no SDK already here talks to either.
+  # This is the Flutter team's first-party plugin, so it adds one dependency
+  # rather than a vendor account and a second entitlement source.
+  in_app_purchase: ^3.3.1
+  # Already here through in_app_purchase; declared because this code imports
+  # it directly. Play's restore path overwrites the status of every queried
+  # purchase with `restored`, and the only place the real state survives is
+  # `GooglePlayPurchaseDetails.billingClientPurchase` — which spec §4's rule
+  # that a pending purchase grants nothing has to be read from.
+  in_app_purchase_android: ^0.5.5
+  intl: ^0.20.3
+  meta: ^1.19.0
+  shared_preferences: ^2.5.6
+  # The privacy policy and support page live on the public site the stores
+  # need anyway (spec: store disclosures), so the app links out rather than
+  # shipping a second copy that would drift from the published one.
+  url_launcher: ^6.3.3
+
+dev_dependencies:
+  bloc_lint: ^0.4.3
+  bloc_test: ^10.0.0
+  flame_test: ^2.3.1
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+  flutter_test:
+    sdk: flutter
+  import_sorter: ^4.6.0
+  integration_test:
+    sdk: flutter
+  mocktail: ^1.0.5
+  # Test-only: the base class FakeUrlLauncher mixes in.
+  plugin_platform_interface: ^2.1.8
+  # Test-only: the store seam used to prove settings writes serialize.
+  shared_preferences_platform_interface: ^2.4.2
+  # Test-only: the launcher seam used to prove the policy row reaches a URL.
+  url_launcher_platform_interface: ^2.3.2
+  very_good_analysis: ^11.0.0
+  # Test-only: reads this manifest's own font families structurally, so a
+  # second face joining Pretendard fails rather than passing on a substring.
+  yaml: ^3.1.4
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/audio/
+    - assets/images/
+    # Registered by literal path, so the parent folder alone picks up neither.
+    - assets/licenses/audio/
+    - assets/licenses/pretendard/
+  fonts:
+    # The variable file serves regular, bold and black through its wght axis.
+    - family: Pretendard
+      fonts:
+        - asset: assets/fonts/PretendardVariable.ttf
+    # Bundled because spec 0003 requires the headline face the store
+    # compositor reads to be an application-bundled font, and ImageMagick
+    # cannot drive a variable axis. Its own family, not a second face inside
+    # Pretendard: a w700 entry there would sit closer to a w900 request than
+    # the variable file's undeclared w400 default, so the loading screen's
+    # black would silently render bold.
+    - family: PebbixStoreHeadline
+      fonts:
+        - asset: assets/fonts/store_headline_bold.ttf
+
+  config:
+    enable-swift-package-manager: true
+
+scripts: merry.yaml
+
+import_sorter:
+  emojis: true
+  # Generated output. Sorting it injects banner comments the generators
+  # drop on the next run, so every regeneration churns the diff.
+  ignored_files:
+    - /lib/gen/
+    - /lib/l10n/gen/

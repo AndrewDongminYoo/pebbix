@@ -1,0 +1,46 @@
+{
+  "cell": {
+    "width": 256,
+    "height": 256,
+    "safe_margin_x": 14,
+    "safe_margin_y": 20
+  },
+  "fit": {
+    "resample": "lanczos",
+    "align_x": "bbox-center",
+    "align_y": "bottom",
+    "pixel_unfake": false
+  },
+  "states": {
+    "loader": {
+      "frames": 4,
+      "fps": 10,
+      "loop": false,
+      "action": "mint alien facing left, empty cupped hands forward at chest height: standing, left step, right step, leaning forward to load; no bubble, stationary poses"
+    },
+    "mechanic": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false,
+      "action": "peach alien kneeling facing right, holding a short wrench: neutral, turn left, turn right, recoil; wrench tip stays at the same forward contact point"
+    },
+    "mint_cheer": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false,
+      "action": "mint alien facing front: smile with hands at chest, same pose blink, anticipatory crouch with hands together, straight standing with arms raised in celebration; no airborne pose"
+    },
+    "peach_cheer": {
+      "frames": 4,
+      "fps": 8,
+      "loop": false,
+      "action": "peach alien facing front: smile with hands at chest, same pose blink, anticipatory crouch with hands together, straight standing with arms raised in celebration; no airborne pose"
+    },
+    "base": {
+      "frames": 1,
+      "fps": 1,
+      "loop": false,
+      "action": "stationary round brown launcher base with gray upright ring socket, no characters and no launcher arm"
+    }
+  }
+}
