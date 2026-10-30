@@ -10,9 +10,12 @@ A bubble-shooter puzzle game built with [Flutter][flutter_link] and [Flame][flam
 
 ## Distribution and licensing
 
-Store development is winding down; this revision prepares a selected public-source snapshot for `AndrewDongminYoo/pebbix`.
-The existing development repository remains private, and this text does not certify that either store has already been withdrawn or that the new repository has been published.
+Pebbix is shared here as a selected, source-available snapshot with a new history.
+The existing development repository and its history remain private.
+Store development is winding down, and Android store distribution is planned to end after this source transition.
+This repository does not certify that either store has already been withdrawn.
 Feature development and ongoing support are not promised.
+Visit the [Pebbix website](https://pebbix.donminzzi.kr) for distribution information, privacy information, and support.
 
 Pebbix uses a mixed-license, source-available policy: the game is PolyForm Noncommercial 1.0.0, the five explicitly designated reusable source files and two synthesized cues are MIT, and original explanatory prose is CC BY 4.0.
 Original graphics use CC BY-NC 4.0 to the extent rights are held; external audio and fonts keep their existing terms.
