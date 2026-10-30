@@ -3,8 +3,12 @@
 
 # Pebbix
 
-![Pebbix with its alien mascot and six symbol bubbles](assets/branding/repository-banner.png)
-<!-- Banner reused without pixel edits from pebbix-landing at 654410f0068d757859e83fa5a0f35407f250bee7; artwork terms are in LICENSE and REUSE.toml. -->
+![Pebbix with four launcher friends and six symbol bubbles](assets/branding/repository-banner.png)
+<!--
+README banner: AI-assisted composition of existing Pebbix launcher-friend artwork.
+Social preview: unmodified landing image from pebbix-landing at 654410f0068d757859e83fa5a0f35407f250bee7, retained as assets/branding/social-preview.png.
+Artwork terms are in LICENSE and REUSE.toml.
+-->
 
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
