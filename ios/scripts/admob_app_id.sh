@@ -30,8 +30,11 @@ IFS=','
 for encoded in ${DART_DEFINES:-}; do
 	# base64's decode flag differs between GNU coreutils and macOS releases. GNU takes --decode;
 	# every macOS base64 takes -D, so that is the fallback when --decode is refused.
-	define=$(printf '%s' "${encoded}" | base64 --decode 2>/dev/null ||
-		printf '%s' "${encoded}" | base64 -D) ||
+	# A refused probe can close stdin early, so silence both ends of that expected failure.
+	define=$(
+		{ printf '%s' "${encoded}" | base64 --decode; } 2>/dev/null ||
+			printf '%s' "${encoded}" | base64 -D
+	) ||
 		fail "DART_DEFINES holds an entry that is not base64: ${encoded}"
 	case ${define} in
 	ADMOB_APP_ID=*) app_id=${define#ADMOB_APP_ID=} ;;
