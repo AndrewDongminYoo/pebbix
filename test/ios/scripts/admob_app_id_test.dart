@@ -96,6 +96,17 @@ void main() {
       );
     });
 
+    test('keeps macOS fallback quiet when a large define fills the probe pipe', () {
+      _expectAppId(
+        _run(
+          configuration: 'Release-production',
+          defines: {'UNRELATED_BUILD_FLAG': ''.padRight(90000, 'x'), ..._allDefines},
+          pathPrefix: _macStyleBase64().path,
+        ),
+        _appId,
+      );
+    });
+
     test('rejects a production release that is missing some AdMob defines', () {
       _expectError(
         _run(configuration: 'Release-production', defines: {'ADMOB_APP_ID': _appId}),
