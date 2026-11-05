@@ -18,7 +18,7 @@ Characters, silhouettes, poses, launcher, planet, bubble layout, UI, palette map
 
 ## 13+ general-casual guardrails
 
-The small rounded cast is an operator-approved emotional direction, not a change to the fixed audience declaration.
+The small rounded cast is an approved emotional direction, not a change to the fixed audience declaration.
 Gameplay screenshots keep the defenders subordinate to the board, score pressure, and aiming lane rather than presenting a character-only storybook surface.
 AND-102 and release marketing must exclude infant props, nursery patterns, educational prompts, parent-directed copy, toy-like sound cues, and other explicit child-directed signals.
 Store copy and screenshots foreground endless survival, score chasing, deterministic aiming, and bank-shot mastery.

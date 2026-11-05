@@ -1,6 +1,6 @@
 # AND-101 cute defenders image-generation manifest
 
-The operator approved the 9:16 gameplay prototype on 2026-08-08 before individual asset production began.
+The 9:16 gameplay prototype was approved on 2026-08-08 before individual asset production began.
 All accepted raster concepts use the built-in imagegen pipeline.
 The tool does not expose a model identifier, so the model is `[UNKNOWN]`.
 
@@ -15,7 +15,7 @@ The first generated composition, `exec-3fc59d8d-92aa-47db-b0a1-f1ab7676a69c.png`
 The alignment correction, `exec-509cdd4a-af57-4851-9574-f433175cd947.png`, was then rejected because the characters remained too large, detailed, and hero-mascot-like.
 The final approved revision simplified the cast to four same-species neighbors and added an original non-Earth home planet.
 
-The operator-supplied screenshots were used only to identify high-level mood traits: small harmless characters, minimal facial marks, a bright 2D casual surface, and an ensemble defending a planet.
+The supplied screenshots were used only to identify high-level mood traits: small harmless characters, minimal facial marks, a bright 2D casual surface, and an ensemble defending a planet.
 No screenshot is redistributed in this packet.
 
 ## Shared visual contract
@@ -70,16 +70,16 @@ Trunk `1.25.0` optimized every accepted PNG with `oxipng` `10.1.1` before these 
 
 ## Reference chain
 
-| Generation call             | Material references                                                                               |
-| --------------------------- | ------------------------------------------------------------------------------------------------- |
-| Approved gameplay prototype | Earlier prototype revision and operator feedback; supplied screenshot used as mood-only reference |
-| Background                  | None                                                                                              |
-| Star bubble                 | None                                                                                              |
-| Ring bubble                 | Raw star bubble for scale, outline, and highlight consistency                                     |
-| Defender squad body         | Approved gameplay prototype                                                                       |
-| Launcher arm                | Approved gameplay prototype and raw defender body for silhouette and registration                 |
-| Game-over composition       | Initial result composition for a scoped acting correction                                         |
-| App-icon thumbnails         | Approved gameplay prototype, accepted body, star bubble, and ring bubble                          |
+| Generation call             | Material references                                                                      |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| Approved gameplay prototype | Earlier prototype revision and feedback; supplied screenshot used as mood-only reference |
+| Background                  | None                                                                                     |
+| Star bubble                 | None                                                                                     |
+| Ring bubble                 | Raw star bubble for scale, outline, and highlight consistency                            |
+| Defender squad body         | Approved gameplay prototype                                                              |
+| Launcher arm                | Approved gameplay prototype and raw defender body for silhouette and registration        |
+| Game-over composition       | Initial result composition for a scoped acting correction                                |
+| App-icon thumbnails         | Approved gameplay prototype, accepted body, star bubble, and ring bubble                 |
 
 Two generated prototype sources were rejected before approval.
 `exec-3fc59d8d-92aa-47db-b0a1-f1ab7676a69c.png`, SHA-256 `1fed439cae7133faa68ea9c2c32443a6563a3e272f26f4eda601f41981515a87`, had a trajectory preview that did not match its angled launcher.
