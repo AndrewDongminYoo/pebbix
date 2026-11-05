@@ -1,6 +1,6 @@
 # AND-101 cute defenders approval packet
 
-Status: **9:16 gameplay prototype approved by Dongmin Yu on 2026-08-08; minimal spike packet complete and awaiting PR review.**
+Status: **9:16 gameplay prototype approved on 2026-08-08; minimal spike packet complete and awaiting PR review.**
 
 This folder is the visual authority for the revised AND-101 direction.
 This self-contained folder is the only AND-101 visual evidence retained on this branch and does not replace current runtime assets.
@@ -33,7 +33,7 @@ The launcher barrel, loaded bubble, and dotted preview share one aim axis.
 ## Approval surface
 
 - [Approval board](and-101-approval-board.png) presents the complete packet in one view.
-- [Gameplay prototype](prototype-gameplay.png) is the style authority approved by Dongmin Yu, created before individual assets.
+- [Gameplay prototype](prototype-gameplay.png) is the approved style authority, created before individual assets.
 - [Background concept](background-concept.png) reserves the central aiming lane while concentrating decoration at the upper and outer edges.
 - [Star bubble](bubble-star.png) and [ring bubble](bubble-ring.png) are transparent representative sprites with non-color symbols.
 - [Defender squad body](defender-squad-body.png) and [launcher arm](cosmo-launcher-arm.png) are equal-size transparent layers.
