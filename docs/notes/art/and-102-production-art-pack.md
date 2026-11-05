@@ -1,12 +1,12 @@
 # AND-102 production art pack manifest
 
-Spec §2 package A, produced 2026-08-08 under the operator-approved AND-101 cute-defenders direction.
+Spec §2 package A, produced 2026-08-08 under the approved AND-101 cute-defenders direction.
 The visual authority is `docs/notes/visual-spikes/and-101/cute-defenders/`; its shared visual contract and processing contract apply verbatim here.
 All new raster sources were generated with the built-in imagegen pipeline; the tool does not expose a model identifier, so the model is `[UNKNOWN]`.
 
 ## Symbol and color mapping
 
-The operator approved extending `BubbleColor` from five to six values (2026-08-08) and this mapping.
+Extending `BubbleColor` from five to six values (2026-08-08) and this mapping were approved.
 The engraved symbols are the identity channel; color is secondary, per the spec §5 rule that bubbles differ by symbol, not color alone.
 
 | `BubbleColor`  | Fill                 | Engraved symbol | Asset               | Origin                              |
@@ -22,7 +22,7 @@ The engraved symbols are the identity channel; color is secondary, per the spec 
 
 ## Promoted AND-101 assets
 
-Five accepted spike assets were promoted into `assets/images/`; background, idle body, and launcher arm are unmodified byte copies, while the two bubbles were subsequently trimmed to their alpha bounding boxes (see below), and the ring bubble was later hue-rotated from cyan teal to azure blue (`magick -modulate 100,100,120`) after playtesting showed the cyan fill sat too close to the mint triangle in the four-color in-play set (operator decision, 2026-08-08). All provenance chains remain those recorded in the AND-101 manifest.
+Five accepted spike assets were promoted into `assets/images/`; background, idle body, and launcher arm are unmodified byte copies, while the two bubbles were subsequently trimmed to their alpha bounding boxes (see below), and the ring bubble was later hue-rotated from cyan teal to azure blue (`magick -modulate 100,100,120`) after playtesting showed the cyan fill sat too close to the mint triangle in the four-color in-play set (decision, 2026-08-08). All provenance chains remain those recorded in the AND-101 manifest.
 
 | Production asset        | Copied from               |
 | ----------------------- | ------------------------- |
@@ -69,7 +69,7 @@ The splash is a deterministic local composition, not a generation:
 magick assets/images/background.png \( assets/images/shooter_body_idle.png -trim +repage -resize 640x \) -gravity south -geometry +0+120 -composite assets/branding/splash.png
 ```
 
-The app icon reproduces the operator-selected bottom-right cell of the AND-101 icon contact sheet (defender holding the star and ring bubbles), with the important elements held inside the central 80 percent for mask safety.
+The app icon reproduces the selected bottom-right cell of the AND-101 icon contact sheet (defender holding the star and ring bubbles), with the important elements held inside the central 80 percent for mask safety.
 Masters live in `assets/branding/`, which is deliberately not registered in `pubspec.yaml` — platform icon and splash artifacts are generated from these masters in a follow-up commit, and the masters themselves must not ship inside the app bundle.
 
 ## Committed asset hashes
