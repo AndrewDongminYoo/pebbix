@@ -30,11 +30,11 @@ jobs:
     # integration". The reusable workflow declares no permissions of its own.
     permissions:
       pull-requests: read
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@33d441b1f92ff046f1945309a204d9ed039e6fc9 # v2.1.0
 
   build:
     if: github.event_name != 'pull_request'
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@33d441b1f92ff046f1945309a204d9ed039e6fc9 # v2.1.0
     with:
       run_bloc_lint: true
       # Same as the analysis_options.yaml page_width.
@@ -55,7 +55,7 @@ jobs:
         fi
 
   spell-check:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@bf86fc749b907c6cc60e655f7f2ef619287b1b15 # v2.0.3
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@33d441b1f92ff046f1945309a204d9ed039e6fc9 # v2.1.0
     with:
       includes: |
         **/*.md
