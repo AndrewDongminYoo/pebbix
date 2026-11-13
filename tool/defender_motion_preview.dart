@@ -6,7 +6,7 @@ import 'dart:ui' as ui;
 
 import 'package:flame/cache.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 
 import 'package:bubble_shooter/game/game.dart';
@@ -97,7 +97,7 @@ class _DefenderPreview {
   void resume() => _game.resumeEngine();
   void pause() => _game.pauseEngine();
   // JS controls call methods with positional arguments.
-  // ignore: avoid_positional_boolean_parameters, use_setters_to_change_properties
+  // ignore: use_setters_to_change_properties
   void reduceMotion(bool value) => _game.defenderMotion.reducedMotion = value;
 
   void measure() {

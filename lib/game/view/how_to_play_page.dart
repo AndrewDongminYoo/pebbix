@@ -1,10 +1,8 @@
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
-
 // 📦 Package imports:
 import 'package:flame/cache.dart';
 import 'package:flame/components.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 
 // 🌎 Project imports:
 import 'package:bubble_shooter/game/components/components.dart';

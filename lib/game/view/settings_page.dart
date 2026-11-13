@@ -3,7 +3,9 @@ import 'dart:async';
 
 // 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+
+// 📦 Package imports:
+import 'package:material_ui/material_ui.dart';
 
 // 🌎 Project imports:
 import 'package:bubble_shooter/game/session/purchase_gateway.dart';

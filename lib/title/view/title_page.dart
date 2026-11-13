@@ -2,12 +2,12 @@
 import 'dart:async';
 
 // 🐦 Flutter imports:
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 // 📦 Package imports:
 import 'package:flame/components.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_ui/material_ui.dart';
 
 // 🌎 Project imports:
 import 'package:bubble_shooter/app/settings_route.dart';

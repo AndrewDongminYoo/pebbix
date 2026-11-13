@@ -1,9 +1,14 @@
+// 🎯 Dart imports:
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// 📦 Package imports:
+import 'package:bloc/bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// 🌎 Project imports:
 import 'package:bubble_shooter/app/app_bloc_observer.dart';
 import 'package:bubble_shooter/firebase_telemetry_bootstrap.dart';
 import 'package:bubble_shooter/game/session/firebase_crash_reporter.dart';

@@ -1,11 +1,16 @@
+// 🎯 Dart imports:
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+// 🐦 Flutter imports:
+import 'package:flutter/widgets.dart';
+
+// 📦 Package imports:
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// 🌎 Project imports:
 import 'package:bubble_shooter/game/components/bubble_component.dart';
 import 'package:bubble_shooter/game/components/special_shot_effect_component.dart';
 import 'package:bubble_shooter/game/domain/domain.dart';

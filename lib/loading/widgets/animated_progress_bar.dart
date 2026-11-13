@@ -2,8 +2,8 @@
 // SPDX-FileCopyrightText: 2026 kr.donminzzi
 // SPDX-License-Identifier: MIT
 
-// 🐦 Flutter imports:
-import 'package:flutter/material.dart';
+// 📦 Package imports:
+import 'package:material_ui/material_ui.dart';
 
 /// {@template animated_progress_bar}
 /// A [Widget] that renders a intrinsically animated progress bar.

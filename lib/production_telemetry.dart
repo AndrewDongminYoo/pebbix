@@ -2,9 +2,10 @@
 import 'dart:async';
 import 'dart:developer';
 
-// 🐦 Flutter imports:
 // 🌎 Project imports:
 import 'package:bubble_shooter/game/session/analytics_sink.dart';
+
+// 🐦 Flutter imports:
 
 /// A local SDK failure must not prevent the title screen from opening.
 Future<AnalyticsSink> startFirebaseTelemetry({

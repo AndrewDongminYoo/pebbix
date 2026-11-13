@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
+// 📦 Package imports:
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
+// 🌎 Project imports:
 import 'package:bubble_shooter/app/settings_route.dart';
 import 'package:bubble_shooter/game/session/session.dart';
 import 'package:bubble_shooter/l10n/l10n.dart';

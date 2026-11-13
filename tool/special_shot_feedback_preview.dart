@@ -6,7 +6,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flame/cache.dart';
 import 'package:flame/game.dart';
 import 'package:flame_audio/bgm.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'package:bubble_shooter/game/game.dart';
 import 'package:bubble_shooter/gen/assets.gen.dart';

@@ -1,6 +1,10 @@
+// 🐦 Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// 📦 Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
+// 🌎 Project imports:
 import 'package:bubble_shooter/game/session/firebase_crash_reporter.dart';
 
 void main() {
