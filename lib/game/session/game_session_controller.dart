@@ -391,7 +391,12 @@ class GameSessionController extends Cubit<GameSessionState> {
 
   @override
   Future<void> close() async {
-    await _subscription?.cancel();
+    final subscription = _subscription;
+    _binding = null;
+    _subscription = null;
+    _revive = null;
+    _score = null;
+    await subscription?.cancel();
     return await super.close();
   }
 }
