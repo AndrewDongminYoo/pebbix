@@ -126,7 +126,7 @@ class AppView extends StatelessWidget {
         ),
         fontFamily: _fontFamily,
       ),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const LoadingPage(),
     );

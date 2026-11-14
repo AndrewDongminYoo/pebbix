@@ -71,7 +71,7 @@ extension PumpApp on WidgetTester {
           ],
           child: MaterialApp(
             locale: locale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            localizationsDelegates: appLocalizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             builder: textScaler == null
                 ? null

@@ -90,7 +90,7 @@ Future<void> main() async {
   preview = createJSInteropWrapper(controls);
   runApp(
     MaterialApp(
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
         backgroundColor: const Color(0xFF0B1226),
