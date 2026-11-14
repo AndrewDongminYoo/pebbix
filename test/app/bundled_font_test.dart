@@ -34,8 +34,12 @@ void main() {
   group('the bundled font', () {
     late Set<int> covered;
 
-    setUpAll(() {
-      covered = supportedCodePoints(File('assets/fonts/PretendardVariable.ttf').readAsBytesSync());
+    setUpAll(() async {
+      final bytes = File('assets/fonts/PretendardVariable.ttf').readAsBytesSync();
+      covered = supportedCodePoints(bytes);
+      // Load before testWidgets attaches its pre-test text render tree.
+      final loader = FontLoader('Pretendard')..addFont(Future.value(bytes.buffer.asByteData()));
+      await loader.load();
     });
 
     test('carries every character both locales can render', () {
@@ -65,13 +69,7 @@ void main() {
       expect(samples.keys.where((c) => !covered.contains(c)).map((c) => samples[c]), isEmpty);
     });
 
-    testWidgets('the weights the UI asks for reach the variable axis', (tester) async {
-      final loader = FontLoader('Pretendard')
-        ..addFont(
-          Future.value(File('assets/fonts/PretendardVariable.ttf').readAsBytesSync().buffer.asByteData()),
-        );
-      await loader.load();
-
+    testWidgets('the weights the UI asks for reach the variable axis', (_) async {
       double widthAt(FontWeight weight) => (TextPainter(
         text: TextSpan(
           text: '점수 Score 1234',
