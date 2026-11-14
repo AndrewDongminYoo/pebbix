@@ -109,6 +109,31 @@ void main() {
 
   tearDown(() => gameEvents.close());
 
+  test('a page can detach after its session has closed', () async {
+    final controller = GameSessionController(
+      ads: ads,
+      entitlements: entitlements,
+      analytics: analytics,
+      settings: settings,
+    );
+    final binding = controller.attach(
+      events: gameEvents.stream,
+      revive: () => true,
+      score: () => liveScore,
+    );
+    controller
+      ..onRunStarted()
+      ..onGameOver(defeatStats);
+    expect(controller.state.phase, SessionPhase.continueOffer);
+
+    await controller.close();
+    await controller.detach(binding);
+    await Future<void>.delayed(Duration.zero);
+
+    expect(controller.state.completedRuns, 0);
+    expect(analytics.names, isNot(contains('run_end')));
+  });
+
   /// Attached at construction the way [GameView] does it, so every test below
   /// runs against a controller that is bound to a game.
   GameSessionController build() =>

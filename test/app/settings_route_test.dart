@@ -25,7 +25,7 @@ void main() {
           RepositoryProvider<AnalyticsSink>.value(value: const AnalyticsSink()),
         ],
         child: MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: Scaffold(
             body: Builder(
@@ -62,7 +62,7 @@ void main() {
           RepositoryProvider<AnalyticsSink>.value(value: analytics),
         ],
         child: MaterialApp(
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          localizationsDelegates: appLocalizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           home: Scaffold(
             body: Builder(

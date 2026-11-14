@@ -34,7 +34,7 @@ void main() {
           MaterialApp(
             theme: ThemeData(fontFamily: 'Pretendard'),
             locale: locale,
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            localizationsDelegates: appLocalizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
             builder: (context, child) => MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(2)),
@@ -67,7 +67,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         theme: ThemeData(fontFamily: 'Pretendard'),
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localizationsDelegates: appLocalizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: SettingsPage(
           initialSettings: const GameSettings(),

@@ -148,7 +148,7 @@ Future<void> main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: appLocalizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(
         backgroundColor: const Color(0xFF0B1226),
